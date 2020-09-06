@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+body, html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+}
+h1 {
+  font-weight:200;
+}
+h2 {
+  font-size: 2em;
+  font-weight: 600;
+}
+h3 {
+  font-weight: 600;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 0.5fr repeat(6,1fr);
+  grid-template-areas:
+  ". h h h h ."
+  ". h h h h ."
+  ". . b b . ."
+  "s s b b c c"
+  "s s k k c c"
+  ". . k k . ."
+  "f f f f f f";
+}
+
+header {
+  grid-area: h;
+  text-align: center;
+}
+.header-text {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-1, .container-2, .container-3, .container-4 {
+  padding: 5% 10%;
+  margin: 5%;
+}
+img {
+  float: right;
+  margin: 7% 2%;
+}
+.container-1 {
+  grid-area: s;
+  border-top: hsl(180, 62%, 55%) 2px solid;
+  box-shadow: 5px 5px 25px #888888;
+}
+.container-2 {
+  grid-area: b;
+  border-top: hsl(0, 78%, 62%) 2px solid;
+  box-shadow: 5px 5px 25px #888888;
+}
+.container-3 {
+  grid-area: k;
+  border-top: hsl(34, 97%, 64%) 2px solid;
+  box-shadow: 5px 5px 25px #888888;
+}
+.container-4 {
+  grid-area: c;
+  border-top: hsl(212, 86%, 64%) 2px solid;
+  box-shadow: 5px 5px 25px #888888;
+}
+footer {
+  grid-area: f;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 600px)
+{
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 7fr;
+    grid-template-areas:
+    "h"
+    "b"
+    "s"
+    "c"
+    "k"
+    "f";
+  }
+}
